@@ -175,7 +175,7 @@ function verificar() {
 
         const style = document.createElement('style');
         style.textContent = `
-                table::before;
+                table::after{
                 content: "";
                 position: absolute ;
                 top: 0;
