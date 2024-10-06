@@ -19,6 +19,12 @@ function activo(boton) {
 function verificar() {
     var botones = document.querySelectorAll("input[type='button']");
 
+ contador++;
+    if (contador == 9) {
+        document.getElementById("turno").innerHTML = "EMPATE!!!";
+    }
+   
+
     if (botones[0].value == botones[1].value && botones[1].value == botones[2].value && botones[0].value != "") {
         document.getElementById("turno").innerHTML =  `Gana ${botones[0].value}` ;
         bloquear();
@@ -169,7 +175,7 @@ function verificar() {
 
         const style = document.createElement('style');
         style.textContent = `
-                        table::before{
+                table::before;
                 content: "";
                 position: absolute ;
                 top: 0;
@@ -186,10 +192,8 @@ function verificar() {
         document.head.appendChild(style);
     }
 
-    contador++;
-    if (contador == 9) {
-        document.getElementById("turno").innerHTML = "EMPATE!!!";
-    }
+    
+   
 }
 
 function bloquear() {
